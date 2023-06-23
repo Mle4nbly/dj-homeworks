@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 
 DATA = {
     'omlet': {
@@ -18,6 +18,53 @@ DATA = {
     },
     # можете добавить свои рецепты ;)
 }
+
+def home_view(request):
+    pages = {
+        'Омлет': reverse('omlet'),
+        'Паста': reverse('pasta'),
+        'Бутерброд': reverse('buter')
+    }    
+    context = {
+        'pages': pages
+    }
+    return render(request, 'calculator/home.html', context)
+
+
+def omlet_view(request):
+    amount = int(request.GET.get('servings', 1))
+    context = {
+        'recipe': {
+            'яйца, шт': 2 * amount,
+            'молоко, л': 0.1 * amount,
+            'соль, ч.л.': 0.5 * amount,
+        }
+    }
+    return render(request, 'calculator/index.html', context)
+
+
+def pasta_view(request):
+    amount = int(request.GET.get('servings', 1))
+    context = {
+        'recipe': {
+            'макароны, г': 0.3 * amount,
+            'сыр, г': 0.05 * amount,
+        }
+    }
+    return render(request, 'calculator/index.html', context)
+
+
+def buter_view(request):
+    amount = int(request.GET.get('servings', 1))
+    context = {
+        'recipe': {
+            'хлеб, ломтик': 1 * amount,
+            'колбаса, ломтик': 1 * amount,
+            'сыр, ломтик': 1 * amount,
+            'помидор, ломтик': 1 * amount,
+        }
+    }
+    return render(request, 'calculator/index.html', context)
 
 # Напишите ваш обработчик. Используйте DATA как источник данных
 # Результат - render(request, 'calculator/index.html', context)

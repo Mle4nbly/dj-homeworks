@@ -10,8 +10,7 @@ def home_view(request):
         'Главная страница': reverse('home'),
         'Показать текущее время': reverse('time'),
         'Показать содержимое рабочей директории': reverse('workdir')
-    }
-    
+    }    
     context = {
         'pages': pages
     }
@@ -21,7 +20,7 @@ def home_view(request):
 def time_view(request):
     current_time = datetime.now().time()
     msg = f'Текущее время: {current_time}'
-    return HttpResponse(msg), 
+    return HttpResponse(msg)
 
 
 def workdir_view(request):
