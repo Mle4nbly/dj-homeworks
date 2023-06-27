@@ -16,5 +16,31 @@
       "author": "Джордж Оруэл",
       "pub_date": "2016-12-06"
     }
+  },
+  {
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+      "name": "Пластичность мозга",
+      "author": "Норман Тойдж",
+      "pub_date": "2017-12-07"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 4,
+    "fields": {
+      "name": "Не навреди",
+      "author": "Генри Марш",
+      "pub_date": "2015-07-12"
+    }
+  },{
+    "model": "books.book",
+    "pk": 5,
+    "fields": {
+      "name": "Сказать жизни 'ДА!'",
+      "author": "Виктор Франкл",
+      "pub_date": "2014-12-06"
+    }
   }
 ]
