@@ -8,8 +8,7 @@ Content-Type: application/json
 
 ###
 
-# создание датчика
-POST {{baseUrl}}/sensors/
+POST http://localhost:8000/api/sensors/
 Content-Type: application/json
 
 {
